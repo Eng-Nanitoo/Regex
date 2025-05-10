@@ -39,7 +39,7 @@ function checkMarque(){
 function checkMatricule(){
     let matricule = document.getElementById("matricule");
     let pMatricule = document.getElementById("matriculeError");
-    const matriculeExpression = /^[0-9]{4}[A-Z]{2}(0[0-9]|1[0-2])$/
+    const matriculeExpression = /^[0-9]{4}(A[A-Z](0[1-9]|1[0-5])|B(A|B)1[3-5])$/
     
     if(matricule.value != ""){
         if (matriculeExpression.test(matricule.value)) {
@@ -50,7 +50,7 @@ function checkMatricule(){
             pMatricule.innerHTML = "matricule doit commence par un chiffre"
         }
         else{
-            pMatricule.innerHTML = "invalid matricule"
+            pMatricule.innerHTML = "Matricule doit etre sous la format: 0000XX00"
         }
     }
     else{
